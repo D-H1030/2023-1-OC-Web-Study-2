@@ -1,0 +1,24 @@
+Git의 명령어 add, commit, push는 각각 어떤 역할을 하는지 장리하고 git pull과 fetch의 차이점을 정리하시오. 
+1>	add
+다음 변경사항을 기록할 때까지 변경분을 모아 놓기 위해서 사용하는 명령어로, 작업공간        상의 변경내용을 staging 영역에 추가할 때 쓰인다. 현재 작업공간에 있는 모든 내용이 아닌 일부 변경내용을 staging 영역으로 이동시킬 수 있다는 점에서 유용하다.  
++add 명령어가 있는 이유 
+: 원하는 변경내용만 add해서 그것만 따로 commit 할 수 있다. 
+           작업공간과 staging 영역을 구분하면 변경이력을 남길 때 작업공간에 있는 변경내용을 한 번에 전부 기록하지 
+           않고 조금씩 나눠서 기록할 수 있다. 
++status 명령어 : 작업공간과 staging 영역의 상태를 확인하는 데에 쓰인다. 
++<remote>는 공동/협업/교류의 공간이며 remote repository에는 GitHub, GitLab, bitbucket이 있다. 
+2>	commit
+의미 있는 변화(=버전->작업이 완결된 상태)에 대해 기록하는 명령어로, 변경사항을 local repository(예: 내 컴퓨터)에 기록하는 데에 쓰인다.  
+3>	 push 
+변경사항을 remote repository(원격저장소)에 기록하기 위한 명령어로, local repository(개인저장소)에 commit된 버전을 remote repository로 넘기는 데에 쓰인다.
+4>	git pull과 fetch의 차이점
+pull과 fetch는 둘 다 원격저장소에서 로컬저장소로 소스를 가져오기 위한 명령어이다. 
+이 둘의 차이점은 가져온 소스를 merge 하느냐, 안 하느냐 의 차이이다. 
+* pull : 원격저장소에서 소스를 가져오고 해당 소스가 현재 내 소스보다 더 최신버전이라면 merge 명령어를 사용하여 지금의 버전을 해당 소스에 맞춰 올린다.
+* fetch : pull과 달리 merge를 하지 않는다. 
+* merge : merge의 사전적 의미는 ‘병합하다, 합치다’로 브랜치를 병합할 때 쓰인다. 이 명령어에 병합할 commit의 이름을 넣어 실행하면 지정한 commit의 내용이 ‘HEAD’가 가리키고 있는 브랜치에 넣어진다. ‘HEAD’는 현재 사용중인 브랜치에 위치한다. (checkout 명령어를 사용하여 현재 사용중인 브랜치를 전환할 수 있다.)
+
++ *work space : 아직 commit할 준비가 안 된 변경내용을 자유롭게 수정할 수 있는 공간.
+*staging area : 작업공간과 git 저장소(local repository)의 변경 이력 사이의 징검다리 역할.
+              commit할 준비가 된 변경내용이 git 저장소에 기록되기 전에 대기하는 공간.
+
